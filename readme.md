@@ -23,3 +23,7 @@ Inside the virtual environment, you can run your project:
 ```
 flask run
 ```
+
+# Use
+
+Then visit http://127.0.0.1:5000/home

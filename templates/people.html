@@ -1,0 +1,12 @@
+{% from "team_names.jinja2" import team_names %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People (secret)</title>
+</head>
+<body>
+<h1>HI {{ boss_name }}. SECRET NAMES OF YOUR TEAM</h1>
+{{ team_names(boss_name, employees_names) }}
+</body>
+</html>

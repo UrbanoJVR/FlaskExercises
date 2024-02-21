@@ -1,0 +1,36 @@
+{% macro sidebar() %}
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto">
+                <div class="bg-dark rounded-3 ml-1 mt-1" style="height: 70pc">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
+                        <a href="#"
+                           class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-5 d-none d-sm-inline">Menu</span>
+                        </a>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                            id="menu">
+                            <li class="nav-item">
+                                <a href="{{ url_for('home_page') }}" class="nav-link align-middle px-0">
+                                    <i class="fs-4 bi-house"></i> <span
+                                        class="ms-1 d-none d-sm-inline">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('form_page') }}" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Formulario</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('extended_page') }}" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Lorem ipsum</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

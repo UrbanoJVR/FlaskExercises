@@ -1,0 +1,19 @@
+{% macro team_names(boss_name, employees_names) %}
+
+    {% if boss_name == 'PYTHON' %}
+        <p>You are the boss. You should know everyone's name. Keep them safe, and let no one else know.</p>
+        <ol>
+            {% for name in  employees_names %}
+                <li>{{ name.upper() }}</li>
+            {% endfor %}
+        </ol>
+    {% elif boss_name == 'CONDA' %}
+        <p>You're not in charge here. Access is restricted to first name only.</p>
+        <ol>
+            <li>{{ employees_names[0].upper() }}</li>
+        </ol>
+    {% else %}
+        <p>YOU HAVE NO TEAM</p>
+    {% endif %}
+
+{% endmacro %}

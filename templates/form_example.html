@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Formulario{% endblock %}
+
+{% block page_header %}
+    <h1>DATOS DE USUARIO</h1>
+{% endblock %}
+
+{% block page_content %}
+    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 m-1">
+        Por favor, completa el formulario con tus datos:
+    </div>
+    <form class="form" method="POST">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de usuario: </span>
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                   aria-describedby="basic-addon1" name="username">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email:</span>
+            <input type="text" class="form-control" placeholder="EmailUsername" aria-label="Username"
+                   name="email_username">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="EmailServer" aria-label="Server" name="email_server">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Descripción:</span>
+            <textarea class="form-control" aria-label="Description" name="description"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-dark m-1" value="GUARDAR">
+    </form>
+
+    {% if show_info_box == True and request.form.is%}
+        <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 m-1">
+            <p>Estos son los datos recopilados:</p>
+            <p>Usuario: {{ username }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Descripción: {{ description }}</p>
+        </div>
+    {% endif %}
+
+{% endblock %}

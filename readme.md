@@ -12,7 +12,9 @@ pipenv shell
 
 To exit from virtual environment:
 
-<code>deactivate</code>
+```
+deactivate
+```
 
 # Run
 

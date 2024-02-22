@@ -57,5 +57,10 @@ def form_page():
         return render_template('form_example.html', show_info_box=False)
 
 
+@app.route('/examplePage')
+def basic_example():
+    return "<h1>Example Page!</h1>"
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

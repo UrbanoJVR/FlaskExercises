@@ -1,6 +1,8 @@
-from flask import Flask, abort, render_template, request
+from flask import Flask, abort, render_template, request, redirect, url_for
+from wtf_form import ExampleForm
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'NOBODY_KNOWS'
 people = ['Isabel', 'Maria', 'Ana', 'Javier', 'Pablo']
 new_people = ['Elena', 'Carmen', 'Alfonso']
 
@@ -60,6 +62,23 @@ def form_page():
 @app.route('/examplePage')
 def basic_example():
     return "<h1>Example Page!</h1>"
+
+
+@app.route('/wtf', methods=['GET', 'POST'])
+def wtf_form():
+    example_form = ExampleForm()
+    if example_form.validate_on_submit():
+        print("Validated")
+        print(example_form.username.data)
+        print(example_form.password.data)
+        return redirect(url_for('wtf_form'))
+    else:
+        print("not validated")
+        for field, errors in example_form.errors.items():
+            for error in errors:
+                print(f"{field}: {error}")
+
+    return render_template('wtf_form.html', form=example_form)
 
 
 if __name__ == '__main__':
